@@ -83,7 +83,7 @@ void loop(void) {
 	celsius = (float)raw / 16.0;
 	Serial.print("  Temperature = ");
 	servoPos = (int)celsius;
-	if (servoPos > 30) {
+	if (servoPos > 30) { // Servo position over temperature
 		servoMain.write(180);
 	}
 	else {
