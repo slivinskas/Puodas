@@ -1,13 +1,16 @@
 #include <OneWire.h>
 #include <Servo.h>
 
-OneWire  ds(10);  // on pin 10 (a 4.7K resistor is necessary)
+int termPin  = 10; //Termometre pin
+int servoPin = 11; // Servo pin
+
+OneWire  ds(termPin);  // on pin 10 (a 4.7K resistor is necessary)
 Servo servoMain; // Define our Servo
 int servoPos = 0;
 
 void setup(void) {
 	Serial.begin(9600);
-	servoMain.attach(11); // servo on digital pin 11
+	servoMain.attach(servoPin); // servo on digital pin 11
 }
 
 void loop(void) {
